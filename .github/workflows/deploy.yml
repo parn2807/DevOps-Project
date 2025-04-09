@@ -22,7 +22,7 @@ jobs:
         working-directory: ./terraform
 
       - name: Terraform Plan
-        run: -terraform plan \
+        run: terraform plan \
           -var="region=ap-southeast-2"  \
           -var="public_key=$PUBLIC_SSH_KEY" \
           -VAR="private_key=$PRIVATE_SSH_KEY" \
