@@ -82,3 +82,19 @@ output "instance_public_ip" {
   value       = aws_instance.server.public_ip
   sensitive   = true
 }
+
+{
+"Version": "2012-10-17",
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": "s3:ListBucket",
+    "Resource": "arn:aws:s3:::parn-ex.project-bucket"
+  },
+  {
+    "Effect": "Allow",
+    "Action": "s3:GetObject",
+    "Resource": "arn:aws:s3:::parn-ex.project-bucket/ *"
+    }
+  ]
+}
