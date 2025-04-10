@@ -8,7 +8,7 @@ terraform {
 
 
 provider "aws"{
-  region = var.region
+  region = "ap-southeast-2"
 }
 
 resource "aws_instance" "server" {
@@ -75,7 +75,7 @@ resource "aws_security_group" "maingroup" {
 
 resource "aws_key_pair" "deployer" {
   key_name = var.key_name
-  public_key = var.private_key
+  public_key = var.public_key
 }
 
 output "instance_public_ip" {
