@@ -22,10 +22,7 @@ jobs:
         working-directory: ./terraform
 
       - name: Terraform Plan
-        run: terraform plan \
-          -var="public_key=$PUBLIC_SSH_KEY" \
-          -var="private_key=$PRIVATE_SSH_KEY" \
-          -var="key_name=deployer-key" \
+        run: terraform plan 
           -out=PLAN
         working-directory: ./terraform
 
