@@ -8,7 +8,7 @@ terraform {
 
 
 provider "aws"{
-  region = "ap-southeast-2"
+  region = var.region
 }
 
 resource "aws_instance" "server" {
@@ -28,7 +28,7 @@ resource "aws_instance" "server" {
     "name" = "DeployVM"
   }
 }
-resource "aws_iam_instance_profile" "ec2-profile" {
+resource "iam_instance_profile" "ec2-profile" {
   name = "githubAction"
   role = "EC2-ECR-AUTH"
 }
